@@ -1,0 +1,24 @@
+The frequencies are get as a list of tuple of type (character, frequency) order by frequency (descending).
+Every char frequency is converted in an huffman node (a Tree Node containing char, frequency, and a bit char (1 or 0)).
+Huffman nodes when are leafs contains the representing char and its frequency, all other nodes don't have a char and the frequency will be the sum of frequency contained in the left and the right subnodes.
+Cycling the list of Huffman Nodes the functions takes the two nodes with the lowest frequency and add them as left and right nodes of a new nodes. Binary cod variable of popped nodes will become 0 if it will be put as left subnode or 1 if it will be put as right subnode. The new Huffman Node created will be put in the same list of other nodes maintaining ordering by frequency.
+The described cycle is repeated until the list will have a single node, representing the root of the Huffman Tree
+At the end of encoding function, encoded string and the huffman tree are returned.
+
+For decoding an encoded text, it takes the the huffman char table encoding with reversed key and values to have a dictionary that given a sequence of bit, return its related character.
+
+Time complexity:
+    - get_ordered_frequencies: O(n*log(n)) as frequencies are stored and reordered with the use of python ordered() function
+    - huffman_encoding(Total): O(n^2*log(n))
+        - huffman_encoding(Tree build): O(n^2*log(n)) as during the huffman tree construction for each step (n steps), list of partial huffman trees is sorted with O(n*log(n))
+        - huffman_encoding(Encoding): O(n) - Given the table (dictionary) of character code the time complexity to convert each character is O(1)
+    - huffman_decoding: O(n) Function iterate over a string and check if the binary substring is present as key in the inverted huffman char tables
+    - Complete time complexity (ie. worst case) = O(n^2*log(n))
+
+Space complexity:
+    - get_ordered_frequencies: O(n) - The list of frequencies of 'n' characters
+    - huffman_encoding(Total): O(n)
+        - huffman_encoding(Tree build): O(n) - Where n is the number of nodes for the Huffman tree
+        - huffman_encoding(Encoding): O(n) - Where n is the length of encoded data (max length is given by the longest character encoding multiplied per original string length, ie:
+    - huffman_decoding: O(n) - Where n is the number of character encodes in the Huffman tree
+    - Complete time complexity (ie. worst case) = O(n)

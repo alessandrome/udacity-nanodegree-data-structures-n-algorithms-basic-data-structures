@@ -1,0 +1,8 @@
+The main structure used is the python OrderedDict, a normal python dictionary that store the order of keys insertion.
+With this feature every time a key is used or inserted, it is pushed as last item of the ordered dictionary, in this way the first element is the last recently used element
+
+Time complexity:
+    - All operations have a complexity time of O(1) (as required)
+
+Space complexity:
+    - All operations have a space complexity of O(n) as depends on the dictionary dimension used as cache, where n is is the max elements that the cache could contain

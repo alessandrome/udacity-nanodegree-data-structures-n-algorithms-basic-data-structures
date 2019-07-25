@@ -1,0 +1,7 @@
+The user is searched in the given group, but he is not found, the user wil be searched in the sub-groups, recursively
+
+Time complexity:
+    - O(n^2) - Each group, if doesn't have the looked for user, search in each of its subgroups. Each recursion has a base complexity of O(n)
+
+Space complexity:
+    - O(n^2) - Data remains in memory until recursion is not ended and each recursion has a base complexity of O(n)

@@ -1,0 +1,13 @@
+For the union a dictionary is created to set all the values in the lists with the value as key and value: dictionary can not have duplicated keys!. From the list of values og the union dictionary,
+iterating it from last element linked list is created using linked list prepend function to exploit O(1) of this operation over the O(n) complexity of a simple append method of the linked list!
+
+For the intersection a dictionary is created to set all the values in the first list, then a dictionary is created to put in values of the second list, but only if the value is present as key in the first dictionary.
+From the intersect dictionary, the same passages of union dictionary described above are used to transform dictionary in a linked list.
+
+Time complexity:
+    - Union O(n) - It simple iterate over the first list and the second list one time each
+    - Intersect O(n) - As union iterate over the first list and the second list only one time
+
+Space complexity:
+    - Union O(n) - Max space used is the length sum of the two lists
+    - Intersect O(n) - Max space used is the length of a list

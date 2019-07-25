@@ -1,0 +1,8 @@
+The recursive function check all contents in the passed directory and if the path is a file and end with the
+specified suffix, add it to return list, otherwise, if the path is a dir, then the function call itself to search in the subdirectory
+
+Time complexity:
+    - O(n^2) - Each dir/subdir recursion iterate over their 'n' dirs/file
+
+Space complexity:
+    - O(n^2) - As recursive function, each list is stored in memory until recursion is not ended and each recursion has a complexity of O(n)

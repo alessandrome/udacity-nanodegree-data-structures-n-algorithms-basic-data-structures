@@ -1,0 +1,7 @@
+The blockchain conserve the list of blocks and the last appended block. In this way, to add a new block it doesn't need to iterate over all the linked list to check the validity of the new block.
+
+Time complexity:
+    - block_chain.add_block O(1) - The last block to get the hash to check is stored as attribute to speed up the process without iterate all the linked list
+
+Space complexity:
+    - block_chain.add_block O(1) - Is not needed extra data to store new block
